@@ -112,7 +112,6 @@ Polynom& Polynom::operator+=(const Polynom& object) {
 		Node* ptr1 = this_current;
 		Node* ptr = this_current->m_next;
 		while (ptr != m_head) {
-			
 			if (this_current->m_exponent == ptr->m_exponent) {
 				this_current->m_coefficient += ptr->m_coefficient;
 				ptr1->m_next = ptr->m_next;
@@ -123,8 +122,6 @@ Polynom& Polynom::operator+=(const Polynom& object) {
 				ptr = ptr->m_next;
 				ptr1 = ptr1->m_next;
 			}
-			
-			
 		}
 		this_current = this_current->m_next;
 	}
