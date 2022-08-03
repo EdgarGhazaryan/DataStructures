@@ -149,9 +149,11 @@ Polynom& Polynom::derivative() {
 	Node* prev = m_head;
 	while (current != m_head) {
 		if (current->m_exponent == 0) {
+			Node* ptr = current->m_next;
 			delete current;
-			prev->m_next = m_head;
-			break;
+			prev->m_next = ptr;
+			current = ptr;
+			continue;
 		}
 		current->m_coefficient *= current->m_exponent--;
 		prev = current;
